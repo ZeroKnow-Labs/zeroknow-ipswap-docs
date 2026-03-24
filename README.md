@@ -164,6 +164,35 @@ cargo test
 
 If the seller never submits the key, the buyer's USDC is refunded. If the buyer never sends USDC, the key is never exposed. Neither party can cheat.
 
+## ⚠️ Storage & TTL (Risk Warning)
+
+**High Priority:** Understanding Soroban's storage mechanics is critical to prevent the permanent loss of funds.
+
+In Soroban, smart contract storage is not permanent by default and requires active maintenance (rent). The Atomic-IP-Marketplace uses `env.storage().instance()` for critical state management. This instance storage has a Time-To-Live (TTL). 
+
+If a contract instance expires due to an unmaintained TTL, the associated data becomes **inaccessible**. This includes vital state information such as swap records and USDC escrow links. 
+
+### Financial Impact: Risk of Locked Funds
+If the storage is not maintained, there is a severe risk of **locked funds**. The contract logic relies entirely on this instance data to execute withdrawals or cancels. If the instance data expires, any USDC held in escrow cannot be retrieved or refunded, resulting in permanent financial loss for the users involved in the swap.
+
+### Mitigation Strategy
+To mitigate this risk and ensure the continuous operation of the marketplace:
+- **Persistent Storage:** Document the use of persistent storage for long-term data.
+- **Active TTL Maintenance:** Explain how operators should use `extend_ttl` to keep the contract 'alive' and prevent instance storage from expiring. 
+
+Operators can manually extend the TTL of the contract instance using the Stellar CLI. Here is a command example for manual TTL extension:
+
+```bash
+stellar contract extend \
+  --id <CONTRACT_ID> \
+  --network testnet \
+  --source-account <OPERATOR_ACCOUNT> \
+  --ledgers-to-extend 535680
+```
+
+### Resources
+For more details on managing storage and rent, please refer to the official [Stellar Soroban Storage Documentation](https://developers.stellar.org/docs/state/storage).
+
 ## 🌍 Why This Matters
 
 IP theft during negotiation costs inventors billions annually. NDAs are legally enforceable but practically weak — especially across borders. Cryptographic guarantees don't require lawyers or jurisdiction.
