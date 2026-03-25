@@ -17,10 +17,7 @@ See [contracts/](/contracts/) for sources.
 ./scripts/test.sh
 ```
 
-## Deploy (Testnet)
-```bash
-./scripts/deploy_testnet.sh
-```
+## Deploy (Testnet)\n```bash\n./scripts/deploy_testnet.sh\n```\n\n## Frontend - Decryption Key Reveal (Issue #34)\n\nAfter swap completion, use the frontend to retrieve the decryption key:\n\n1. Deploy contracts (updates `.env` with `CONTRACT_ATOMIC_SWAP`)\n2. Open `frontend/index.html` in browser\n3. Input contract ID (from `.env`), your swap ID\n4. Fetch status/key (testnet RPC), copy key securely\n5. Optional demo IPFS decrypt stub\n\n**Note:** Pure JS demo with RPC stub; extend with @stellar/stellar-sdk for full RPC XDR.
 
 ## Security
 [SECURITY.md](./SECURITY.md)
