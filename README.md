@@ -17,7 +17,27 @@ See [contracts/](/contracts/) for sources.
 ./scripts/test.sh
 ```
 
-## Deploy (Testnet)\n```bash\n./scripts/deploy_testnet.sh\n```\n\n## Frontend - Decryption Key Reveal (Issue #34)\n\nAfter swap completion, use the frontend to retrieve the decryption key:\n\n1. Deploy contracts (updates `.env` with `CONTRACT_ATOMIC_SWAP`)\n2. Open `frontend/index.html` in browser\n3. Input contract ID (from `.env`), your swap ID\n4. Fetch status/key (testnet RPC), copy key securely\n5. Optional demo IPFS decrypt stub\n\n**Note:** Pure JS demo with RPC stub; extend with @stellar/stellar-sdk for full RPC XDR.
+## Deploy (Testnet)
+```bash
+./scripts/deploy_testnet.sh
+```
+
+## Frontend - Atomic IP Marketplace (Issue #34 + #89)
+
+Full buyer UI:
+
+### 1. Initiate Swap Flow
+1. Deploy contracts (`./scripts/deploy_testnet.sh`, note IDs in `.env`)
+2. Open `frontend/index.html`
+3. Browse listings (demo data; real: query ip_registry.list_by_owner)
+4. Click "Initiate Swap" → enter USDC amount
+5. Approve USDC spend → Initiate (stubs; extend Freighter + full RPC XDR)
+6. Note swap_id for key reveal
+
+### 2. Key Reveal (post-swap)
+Input atomic_swap ID + swap_id → fetch status/key
+
+**Note:** Vanilla JS + Stellar SDK CDN. Stubs for RPC/wallet. Update CONTRACT_IDS in app.js with deployed IDs.
 
 ## Security
 [SECURITY.md](./SECURITY.md)
@@ -28,3 +48,4 @@ TBD (add LICENSE file if needed).
 ---
 
 *Workspace using Soroban SDK v22.0.0*
+
