@@ -1,6 +1,11 @@
-# Atomic IP Marketplace — Documentation
+# ZeroKnow IPSwap — Documentation
+
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)
 
 Project documentation for the Atomic IP Marketplace on Stellar.
+
+**Organization:** [ZeroKnow-Labs](https://github.com/ZeroKnow-Labs)  
+**Repository:** [zeroknow-ipswap-docs](https://github.com/ZeroKnow-Labs/zeroknow-ipswap-docs)
 
 ## Contents
 
@@ -14,8 +19,8 @@ Project documentation for the Atomic IP Marketplace on Stellar.
 
 ## Related Repositories
 
-- **contracts** — Soroban smart contracts (Rust)
-- **frontend** — React/TypeScript UI
+- **[zeroknow-ipswap-contracts](https://github.com/ZeroKnow-Labs/zeroknow-ipswap-contracts)** — Soroban smart contracts (Rust)
+- **[zeroknow-ipswap-frontend](https://github.com/ZeroKnow-Labs/zeroknow-ipswap-frontend)** — React/TypeScript UI
 
 ## License
 
