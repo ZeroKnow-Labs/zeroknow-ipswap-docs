@@ -7,6 +7,17 @@ Project documentation for the Atomic IP Marketplace on Stellar.
 **Organization:** [ZeroKnow-Labs](https://github.com/ZeroKnow-Labs)  
 **Repository:** [zeroknow-ipswap-docs](https://github.com/ZeroKnow-Labs/zeroknow-ipswap-docs)
 
+## Overview
+
+Comprehensive documentation for the Atomic IP Marketplace built on **Stellar's Soroban** smart contract platform.
+
+**Stellar Integration Features:**
+- 🌟 **Soroban Smart Contracts** — Three interconnected contracts (atomic_swap, ip_registry, zk_verifier)
+- 💰 **USDC Payments** — Native Stellar Asset Contract integration
+- 🔒 **Atomic Transactions** — Guaranteed swap execution or full rollback
+- 📊 **Persistent Storage** — Stellar storage with TTL management
+- 🔐 **ZK Proof Verification** — On-chain Merkle proof validation using Poseidon hash
+
 ## Contents
 
 | File | Description |
