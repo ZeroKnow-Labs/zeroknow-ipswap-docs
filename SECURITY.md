@@ -2,9 +2,9 @@
 
 ## Responsible Disclosure
 
-We take security seriously and appreciate your efforts to protect our users and the integrity of Atomic IP Marketplace contracts.
+We take security seriously and appreciate your efforts to protect our users and the integrity of ZeroKnow IPSwap contracts.
 
-If you discover a vulnerability, we would like to know about it as soon as possible. Please report it privately to the project maintainers via email at `farouq@atomic-ip-marketplace.com`.
+If you discover a vulnerability, we would like to know about it as soon as possible. Please report it privately to the project maintainers via email at `security@zeroknow-labs.com`.
 If the upstream repository has GitHub Security Advisories enabled, you may also use that private reporting channel instead of email.
 
 ### Disclosure Process
@@ -76,4 +76,4 @@ No formal bug bounty program yet. Responsible disclosures may receive recognitio
 ---
 
 *Last updated: March 2026*
-*Project: Atomic IP Marketplace (Soroban contracts)*
+*Project: ZeroKnow IPSwap (Soroban contracts)*
